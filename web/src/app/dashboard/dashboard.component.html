@@ -1,0 +1,74 @@
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="row">          
+          <ng-container *ngFor="let manager of managers">
+          <div class="col-lg-3 col-md-6 col-sm-6">
+              <div class="card card-stats">
+                  <div class="card-header card-header-success card-header-icon">
+                      <div class="card-icon">
+                          <i class="material-icons">person</i>
+                      </div>
+                      <p class="card-category text-warning"><b>{{manager.name}}</b></p>
+                      <h3 class="card-title">${{manager.sales}}</h3>
+                  </div>
+                  <div class="card-footer">
+                      <div class="stats">
+                          <i class="material-icons">monetization_on</i> Total Sales By Staff reporting to Manager
+                      </div>
+                  </div>
+              </div>
+          </div>        
+        </ng-container>  
+      </div>
+      <div class="row">
+          <div class="col-md-8">
+              <div class="card card-chart">
+                  <div class="card-header card-header-success">
+                      <div class="ct-chart" id="dailySalesChart"></div>
+                  </div>
+                  <div class="card-body">
+                      <h4 class="card-title">Sales by Staff</h4>
+                      <p class="card-category">Total sales by each staff.</p>
+                  </div>                  
+              </div>
+          </div>
+          <div class="col-md-4">
+              <div class="card card-chart">
+                  <div class="card-header card-header-warning">
+                      <div class="ct-chart" id="websiteViewsChart"></div>
+                  </div>
+                  <div class="card-body">
+                      <h4 class="card-title">Monthly Sales</h4>
+                      <p class="card-category">Sales over months</p>
+                  </div>                  
+              </div>
+          </div>         
+      </div>
+      <div class="row" *ngIf="salesData">          
+          <div class="col-lg-6 col-md-12">
+              <div class="card">
+                  <div class="card-header card-header-warning">
+                      <h4 class="card-title">Staff Sales Stats</h4>
+                      <p class="card-category">All sales by staff and associated manager</p>
+                  </div>
+                  <div class="card-body table-responsive">
+                      <table class="table table-hover">
+                          <thead class="text-warning">
+                              <th>Manager</th>
+                              <th>Staff</th>
+                              <th>Sale</th>                              
+                          </thead>
+                          <tbody>
+                             <tr *ngFor="let sale of salesData">
+                                 <td>{{sale.manager}}</td>
+                                 <td>{{sale.staffName}}</td>
+                                 <td>{{sale.salesTotal}}</td>
+                             </tr>
+                          </tbody>
+                      </table>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
