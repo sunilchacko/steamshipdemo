@@ -1,0 +1,2 @@
+Build and run the api project 
+build should restore all nuget dependencies. Dapper is the only non-standard library used.

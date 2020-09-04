@@ -1,0 +1,7 @@
+Webapi location should be updated in sales-stats-api.service.ts file
+defualt value is http://localhost:50703
+
+- navigate to web folder in vs code
+then the following command in termial
+- npm install
+- ng serve

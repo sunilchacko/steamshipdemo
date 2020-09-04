@@ -1,0 +1,2 @@
+Run the DbCreate.sql in SSMS 
+mdf ldf locations might have to be updated depending on the setup
